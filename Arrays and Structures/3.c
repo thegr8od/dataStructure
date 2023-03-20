@@ -23,21 +23,21 @@ int nfind(char* string, char* pat) {
 int main() {
     char string[100], pat[100];
 
-    printf("¹®ÀÚ¿­À» ÀÔ·ÂÇÏ¼¼¿ä: ");
+    printf("ë¬¸ìì—´ì„ ì…ë ¥í•˜ì„¸ìš”: ");
     fgets(string, sizeof(string), stdin);
-    string[strcspn(string, "\n")] = '\0';  //string¿¡¼­ Ã¹ ¹øÂ° ¹®ÀÚ Ç¥½Ã¸¦ Ã£±â
+    string[strcspn(string, "\n")] = '\0';  //stringì—ì„œ ì²« ë²ˆì§¸ ë¬¸ì í‘œì‹œë¥¼ ì°¾ê¸°
 
-    printf("ºñ±³ÇÒ ÆĞÅÏÀ» ÀÔ·ÂÇÏ¼¼¿ä: ");
+    printf("ë¹„êµí•  íŒ¨í„´ì„ ì…ë ¥í•˜ì„¸ìš”: ");
     fgets(pat, sizeof(pat), stdin);
     pat[strcspn(pat, "\n")] = '\0'; 
 
     int index = nfind(string, pat);
 
     if (index == -1) {
-        printf("ÆĞÅÏÀÌ ¾ø½À´Ï´Ù.\n");
+        printf("íŒ¨í„´ì´ ì—†ìŠµë‹ˆë‹¤.\n");
     }
     else {
-        printf("¹®ÀÚ¿­ %d ¹øÂ°ºÎÅÍ ÆĞÅÏÀÌ ½ÃÀÛµÊ..\n", index);
+        printf("ë¬¸ìì—´ %d ë²ˆì§¸ë¶€í„° íŒ¨í„´ì´ ì‹œì‘ë¨..\n", index);
     }
 
     return 0;
