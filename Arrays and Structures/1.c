@@ -48,7 +48,7 @@ int main()
 		}
 	}
 
-	printf("¿ø¼ÒÀÇ °³¼ö¸¦ ¾²½Ã¿À .. ");
+	printf("Â¿Ã¸Â¼Ã’Ã€Ã‡ Â°Â³Â¼Ã¶Â¸Â¦ Â¾Â²Â½ÃƒÂ¿Ã€ .. ");
 	scanf("%d", &n);
 	printf("Random generated Matrix(20,20)\n");
 	make2dArray(n);
