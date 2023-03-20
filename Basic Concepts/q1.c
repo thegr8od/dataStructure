@@ -33,15 +33,15 @@ int main(void)
 {
 	int* pNum;
 	char* pChar;
-	pNum = func1(); // int Å©±â¸¸Å­ µ¿ÀûÇÒ´ç ¹Ş¾Æ 10À» ÀúÀåÈÄ Á¤¼öÇü Æ÷ÀÎÅÍ ¸®ÅÏ
+	pNum = func1(); // int í¬ê¸°ë§Œí¼ ë™ì í• ë‹¹ ë°›ì•„ 10ì„ ì €ì¥í›„ ì •ìˆ˜í˜• í¬ì¸í„° ë¦¬í„´
 	printf("%d\n", *pNum);
-	func2(pNum);// pNumÀÌ °¡¸®Å°´Â °ÍÀ» 100À¸·Î ¼öÁ¤
+	func2(pNum);// pNumì´ ê°€ë¦¬í‚¤ëŠ” ê²ƒì„ 100ìœ¼ë¡œ ìˆ˜ì •
 	printf("%d\n", *pNum);
-	func3(&pNum); // pNumÀÌ °¡¸®Å°´Â °ÍÀ» 200À¸·Î ¼öÁ¤
+	func3(&pNum); // pNumì´ ê°€ë¦¬í‚¤ëŠ” ê²ƒì„ 200ìœ¼ë¡œ ìˆ˜ì •
 	printf("%d\n\n", *pNum);
-	pChar = func4(100); // pChar Àº 100byte ÇÒ´ç ¹ŞÀº ¸Ş¸ğ¸®¿¡ Å°º¸µå·ÎºÎÅÍ 
-	//ÀÔ·Â ¹ŞÀº ¹®ÀÚ¿­ ÀúÀå
-	printf("ÀÔ·ÂÇÒ ¹®ÀÚ¿­ : ");
+	pChar = func4(100); // pChar ì€ 100byte í• ë‹¹ ë°›ì€ ë©”ëª¨ë¦¬ì— í‚¤ë³´ë“œë¡œë¶€í„° 
+	//ì…ë ¥ ë°›ì€ ë¬¸ìì—´ ì €ì¥
+	printf("ì…ë ¥í•  ë¬¸ìì—´ : ");
 	scanf("%s", pChar);
 	printf("pChar contents = %s\n", pChar);
 	free(pNum);
