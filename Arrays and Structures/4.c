@@ -13,10 +13,10 @@ int main()
     char pat[MAX_LENGTH];
     int failure[MAX_LENGTH];
 
-    printf("¹®ÀÚ¿­À» ÀÔ·ÂÇÏ¼¼¿ä : ");
+    printf("ë¬¸ìì—´ì„ ì…ë ¥í•˜ì„¸ìš” : ");
     scanf("%s", string);
 
-    printf("ºñ±³ÇÒ ÆĞÅÏÀ» ÀÔ·ÂÇÏ¼¼¿ä : ");
+    printf("ë¹„êµí•  íŒ¨í„´ì„ ì…ë ¥í•˜ì„¸ìš” : ");
     scanf("%s", pat);
 
     int lenp = strlen(pat);
@@ -30,7 +30,7 @@ int main()
         failure[i] = j;
     }
 
-    printf("patÀÇ À§Ä¡ Á¤º¸ °ª\n");
+    printf("patì˜ ìœ„ì¹˜ ì •ë³´ ê°’\n");
     int i = 0;
     for (i; i < lenp; i++) {
         printf("failure[%d]=%5d  ", i, failure[i]);
@@ -42,10 +42,10 @@ int main()
     int compare = pmatch(string, pat, failure);
 
     if (compare >= 0) {
-        printf("¹®ÀÚ¿­ %d ¹øÂ°ºÎÅÍ ÆĞÅÏÀÌ ½ÃÀÛµÊ..", compare);
+        printf("ë¬¸ìì—´ %d ë²ˆì§¸ë¶€í„° íŒ¨í„´ì´ ì‹œì‘ë¨..", compare);
     }
     else {
-        printf("ÆĞÅÏÀÌ ¾ø½À´Ï´Ù.");
+        printf("íŒ¨í„´ì´ ì—†ìŠµë‹ˆë‹¤.");
     }
 
     return 0;
