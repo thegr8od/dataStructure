@@ -15,7 +15,7 @@ void SwapNum(int* num1, int* num2)
 
 void sort(int arr[], int n)
 {
-	int* min;	//�ּڰ�
+	int* min;	//ÃÖ¼Ú°ª
 
 	for (int i = 0; i < n; i++)
 	{
