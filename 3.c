@@ -2,66 +2,43 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
-#include <math.h>
 
+int nfind(char* string, char* pat) {
+    int i = 0, j = 0, start = 0;
+    int lasts = strlen(string) - 1;
+    int lastp = strlen(pat) - 1;
+    int endmatch = lastp;
 
+    for (i = 0; endmatch <= lasts; endmatch++, start++) {
+        if (string[endmatch] == pat[lastp]) {
+            for (j = 0, i = start; j < lastp && string[i] == pat[j]; i++, j++);
+            if (j == lastp) {
+                return start; 
+            }
+        }
+    }
+    return -1;
+}
 
-typedef struct student
-{
-	int height;
-	int weight;
-	char name[30];
-	double BMI;
-}student;
+int main() {
+    char string[100], pat[100];
 
-int main(void)
-{
-	FILE* fp;
-	student a[10] = { 0, };
-	int i = 0;
+    printf("문자열을 입력하세요: ");
+    fgets(string, sizeof(string), stdin);
+    string[strcspn(string, "\n")] = '\0';  //string에서 첫 번째 문자 표시를 찾기
 
+    printf("비교할 패턴을 입력하세요: ");
+    fgets(pat, sizeof(pat), stdin);
+    pat[strcspn(pat, "\n")] = '\0'; 
 
-	fp = fopen("input.txt", "r");
+    int index = nfind(string, pat);
 
-	while (fscanf(fp, "%d %d %s", &a[i].height, &a[i].weight, a[i].name) != EOF)
-	{
+    if (index == -1) {
+        printf("패턴이 없습니다.\n");
+    }
+    else {
+        printf("문자열 %d 번째부터 패턴이 시작됨..\n", index);
+    }
 
-		a[i].BMI = ((double)a[i].weight / (double)(a[i].height * a[i].height)) * 10000;
-		i++;
-	}
-
-
-	double pBMI = 0;
-	printf("BMI 값을 쓰시오 : ");
-
-	scanf("%lf", &pBMI);
-	printf("\n");
-	printf("\n");
-
-
-	printf("키\t몸무게\t이름\tBMI\n");
-	printf("==================================\n");
-	for (int j = 0; j < i; j++) {
-
-		printf("%d\t%d\t%s\t%.2lf\n", a[j].height, a[j].weight, a[j].name, a[j].BMI);
-
-	}
-	printf("\n");
-	printf("\n");
-	double Diff = 0;
-	double DiffMin = 100;
-	int index = 0;
-	for (int j = 0; j < i; j++)
-	{
-		Diff = fabs(pBMI - a[j].BMI);
-		if (DiffMin > Diff) {
-			DiffMin = Diff;
-			index = j;
-		}
-	}
-
-	printf("BMI 값이 %.2lf에 가장 근접한 사람 : \n", pBMI);
-	printf("키 : %d, 몸무게 : %d, 이름 : %s, BMI : %.2lf", a[index].height, a[index].weight, a[index].name, a[index].BMI);
-	fclose(fp);
+    return 0;
 }
